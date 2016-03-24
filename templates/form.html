@@ -1,0 +1,30 @@
+<div class="webForm">
+	<header>Sign Up For My Web App</header>
+	{{#data}}
+		{{#select}}
+			<select id="{{id}}" name="{{label}}">
+				<option value="" default selected>{{label}}...</option>
+				{{#options}}
+				<option value={{value}}>{{label}}</option>
+				{{/options}}
+			</select>
+		{{/select}}
+
+		{{#textarea}}
+			<i class="fa {{icon}}"></i>
+			<textarea id={{id}} placeholder="{{label}}"></textarea>
+		{{/textarea}}
+
+		{{^select}}{{^textarea}}
+			<i class="fa {{icon}}"></i>
+			<input type="{{type}}" id="{{id}}" placeholder="{{label}}" />
+			
+		{{/textarea}}{{/select}}
+	{{/data}}
+	<footer>
+		<form>
+		<input type="submit" value="Submit Form"/>
+		</form>
+	</footer>
+
+</div>
